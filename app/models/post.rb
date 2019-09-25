@@ -11,6 +11,10 @@ class Post < ActiveRecord::Base
     end
   end
 
+  before_validation :make_title_case
+
+  #before_save :email_author_about_post
+
   def make_title_case
     self.title = self.title.titlecase
   end
